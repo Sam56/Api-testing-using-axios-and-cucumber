@@ -1,0 +1,230 @@
+[
+  {
+    "description": "nabone authentication",
+    "keyword": "Feature",
+    "name": "API Testing Exercise",
+    "line": 1,
+    "id": "api-testing-exercise",
+    "tags": [],
+    "uri": "features\\api.feature",
+    "elements": [
+      {
+        "id": "api-testing-exercise;fail-with-401-error-invalid-api-key",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Fail with 401 error invalid api key",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [
+              {
+                "content": "{\n\"external_id\": \"SF_TEST001\",\n\"name\": \"San Francisco Test Station\",\n\"latitude\": 37.76,\n\"longitude\": -122.43,\n\"altitude\": 150\n}",
+                "line": 8
+              }
+            ],
+            "keyword": "When ",
+            "line": 7,
+            "name": "send POST request to \"http://api.openweathermap.org/data/3.0/stations?appid=8659182afb89bad57\", the data is",
+            "match": {
+              "location": "steps\\api.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1454000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the post status should be 401",
+            "match": {
+              "location": "steps\\api.js:83"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api-testing-exercise;create-station-\"demo_test001\"",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "Create station \"DEMO_TEST001\"",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [
+              {
+                "content": "{\n\"external_id\": \"Team Demo Test Station 001\",\n\"name\": \"DEMO_TEST001\",\n\"latitude\": 33.33,\n\"longitude\": -122.43,\n\"altitude\": 222\n}",
+                "line": 21
+              }
+            ],
+            "keyword": "When ",
+            "line": 20,
+            "name": "send POST request to \"http://api.openweathermap.org/data/3.0/stations?appid=8659182afb89bad558b38fde3c4c5797\", the data is",
+            "match": {
+              "location": "steps\\api.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 991000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "the post status should be 201",
+            "match": {
+              "location": "steps\\api.js:83"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api-testing-exercise;create-station-\"demo_test002\"",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "Create station \"DEMO_TEST002\"",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [
+              {
+                "content": "{\n\"external_id\": \"Team Demo Test Station 002\",\n\"name\": \"DEMO_TEST002\",\n\"latitude\": 44.44,\n\"longitude\": -122.44,\n\"altitude\": 111\n}",
+                "line": 21
+              }
+            ],
+            "keyword": "When ",
+            "line": 20,
+            "name": "send POST request to \"http://api.openweathermap.org/data/3.0/stations?appid=8659182afb89bad558b38fde3c4c5797\", the data is",
+            "match": {
+              "location": "steps\\api.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1161000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "the post status should be 201",
+            "match": {
+              "location": "steps\\api.js:83"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "api-testing-exercise;get-stations",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "Get stations",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "retrieve GET request to \"http://api.openweathermap.org/data/3.0/stations?appid=8659182afb89bad558b38fde3c4c5797\"",
+            "match": {
+              "location": "steps\\api.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1092000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "the get status should be 200",
+            "match": {
+              "location": "steps\\api.js:87"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "capture the station id",
+            "match": {
+              "location": "steps\\api.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api-testing-exercise;delete-stations",
+        "keyword": "Scenario",
+        "line": 44,
+        "name": "Delete stations",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 45,
+            "name": "Delete the stations created and the delete status should be 204",
+            "match": {
+              "location": "steps\\api.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2452000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api-testing-exercise;verify-the-stations-are-deleted",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Verify the stations are deleted",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "retrive the stations deleted and the get status should be 404 and the body should have 'Station not found'",
+            "match": {
+              "location": "steps\\api.js:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2462000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

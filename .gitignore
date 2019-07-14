@@ -1,0 +1,9 @@
+node_modules
+mochawesome-report
+coverage
+.nyc_output
+.idea
+*.log
+HTMLReports
+allure*
+jest-stare*
